@@ -29,7 +29,8 @@ class SecurityController extends AbstractController
             $user = $this->userRepository->findByEmail($username);
 
             if($user) { 
-                if(password_verify($password, $user->getPassword())) {
+                // FAILLE: Comparaison en clair car les mots de passe ne sont plus hashés
+                if($password === $user->getPassword()) {
     
                     $_SESSION['user'] = [
                         'id' => $user->getId(),

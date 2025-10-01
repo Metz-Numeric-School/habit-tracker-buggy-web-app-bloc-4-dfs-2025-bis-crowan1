@@ -31,10 +31,7 @@ class UserRepository extends AbstractRepository
 
     public function insert(array $data = array())
     {
-        // Hacher le mot de passe 
-        if (isset($data['password'])) {
-            $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-        }
+        // FAILLE: Mot de passe stocké en clair, pas de hachage !
         
         $sql = "INSERT INTO mns_user (lastname, firstname, email, password, isadmin) VALUES (:lastname, :firstname, :email, :password, :isadmin)";
         $query = $this->getConnection()->prepare($sql);

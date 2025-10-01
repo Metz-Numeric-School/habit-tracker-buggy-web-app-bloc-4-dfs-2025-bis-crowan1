@@ -23,9 +23,9 @@ class HabitRepository extends AbstractRepository
 
     public function findByUser(int $userId)
     {
-        $sql = "SELECT * FROM habits WHERE user_id = :user_id";
-        $query = $this->getConnection()->prepare($sql);
-        $query->execute(['user_id' => $userId]);
+        // FAILLE VOLONTAIRE: Injection SQL possible (concaténation directe)
+        $sql = "SELECT * FROM habits WHERE user_id = $userId";
+        $query = $this->getConnection()->query($sql);
         return EntityMapper::mapCollection(Habit::class, $query->fetchAll());
     }
 

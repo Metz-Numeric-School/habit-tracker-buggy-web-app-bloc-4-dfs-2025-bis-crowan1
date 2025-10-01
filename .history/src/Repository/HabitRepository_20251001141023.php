@@ -44,7 +44,8 @@ class HabitRepository extends AbstractRepository
     {
         $name = $data['name'];   
         $description = $data['description'];
- 
+
+        // FAILLE VOLONTAIRE: Requête construite par concaténation (vulnérable aux injections SQL)
         $sql = "INSERT INTO habits (user_id, name, description, created_at) VALUES (" 
             . $data['user_id'] . ", '" 
             . $name . "', '" 
