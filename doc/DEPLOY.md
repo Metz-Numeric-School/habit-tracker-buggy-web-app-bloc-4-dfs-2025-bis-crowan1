@@ -30,19 +30,19 @@ J'ai désactivé le Anti-Xss attack
 ## Méthode de déploiement
 
 
-Sur le serveur j'ai init le Dépôt avec : 
+Sur le serveur j'ai init le Dépôt avec :
 
 mkdir -p /var/depot_git
 cd /var/depot_git
 git init --bare
 
 
-Ensuite dans mon dossier j'ai init aussi le dépôt : 
+Ensuite dans mon dossier j'ai init aussi le dépôt :
 
 git init
-git remote add vps root@172.17.4.7git remote add vps:/var/depot_git 
+git remote add vps root@172.17.4.7git remote add vps:/var/depot_git
 
-Ensuite j'ai ajouté les modifs : 
+Ensuite j'ai ajouté les modifs :
 
 git add .
 git commit -m "Feat: add first commit"
@@ -56,4 +56,25 @@ Pour faire :
 
 git --work-tree=/www/wwwroot/172.17.4.7 --git-dir=/var/depot_git checkout -f main
 
+
+
+Ensuite sur l'url : http://172.17.4.7/dashboard
+
+J'ai bien la possibilité de me connecter avec exemple email : admin@ht-buggy-wapp.fr  mdp : azertyuiop
+
+J'ai bien l'interface qui s'affiche ici :
+
+public/images/Page_admin.28.01.png
+public/images/Website.28.44.png
+public/images/database_phpmyadmin.29.21.png
+public/images/aapannel_admin.30.00.png
+
+J'avais des probleme avec nginx j'ai ajouté la ligne ici présente à la config  :
+
+    location / {
+        try_files $uri $uri/ /index.php$is_args$args;
+    }
+Que j'ai trouvé sur :
+
+https://serverfault.com/questions/893546/nginx-try-files-location-configuration
 

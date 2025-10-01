@@ -26,6 +26,7 @@ class MySqlConnector {
         $username = $_ENV['DB_USERNAME'];
         $password = $_ENV['DB_PASSWORD'];
 
+
         $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
 
         try {

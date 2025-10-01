@@ -3,7 +3,7 @@
         'name' => 'mns/buggy-wapp',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '62914ec53da1a8af0f71bc3537d85dfbffb4acfd',
+        'reference' => '50e79d527ee3ad4290b3073417b2a142d2bcff94',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'mns/buggy-wapp' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '62914ec53da1a8af0f71bc3537d85dfbffb4acfd',
+            'reference' => '50e79d527ee3ad4290b3073417b2a142d2bcff94',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
